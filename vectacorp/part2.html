@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="./css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="./css/main.css"/>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script src="js/part2.js"></script>
+    
+</head>
+
+<body>
+    <div data-role="page" id="home">
+	<header data-role="header"  data-position="fixed"  data-theme="b">         
+            <h4>Directory</h4>
+        
+    </header>
+    <section data-role="content" id="homelist">
+          
+ 
+<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search Employee..." data-inset="true"  data-split-icon="carat-r">
+            <li>
+            <a href="#details">
+                <img src="./images/amy_jones.jpg">
+                <h2>vProspect</h2>
+                <p>Prospect clients</p>
+            </a>
+            </li>
+        </ul>
+    </section>    
+    </div>
+
+    <div data-role="page" id="details">
+	<header data-role="header"  data-position="fixed"  data-theme="b">         
+            
+            <h4>Employee Details</h4>
+ 
+    <a href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini   ui-btn-icon-left ui-icon-back" data-role="button" data-theme="a">Back</a>
+    <a href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-search">Search</a>
+            
+        
+    </header>
+    <section data-role="content" id="details-id">
+        <ul id="details-info">
+            <li><img src="./images/amy_jones.jpg"></li>
+            <li>Jame Koko</li>
+            <li>CEO</li>
+        </ul>
+        <div class="clear"></div>    
+            
+        <ul id="details-id-list" data-role="listview" data-split-icon="carat-r" data-inset="true">
+            <li><a href="#details"><h2>Veiw Manager</h2><p>Prospect clients</p></a></li>
+            <li>
+            <a href="#reporters">
+                <h2>Veiw Direct Reports</h2>
+                <p>2</p>
+            </a>
+            </li>
+            <li><a href="#"><h2>Call Office</h2><p>2</p></a></li>
+            <li><a href="#"><h2>Call Cell</h2><p>2</p></a></li>
+        </ul>
+    </section>    
+    </div>
+    
+        <div data-role="page" id="reporters">
+	<header data-role="header"  data-position="fixed"  data-theme="b">         
+            
+            <h4>Direct Reports</h4>
+ 
+    <a href="#details" class="ui-btn ui-corner-all ui-btn-inline ui-mini   ui-btn-icon-left ui-icon-back" data-role="button" data-theme="a">Back</a>
+    <a href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-search">Search</a>
+            
+        
+    </header>
+    <section data-role="content" id="details-id">
+        <ul id="details-info">
+            <li><img src="./images/amy_jones.jpg"></li>
+            <li>Jame Koko</li>
+            <li>CEO</li>
+        </ul>
+        <div class="clear"></div>    
+            
+         <ul data-role="listview" data-split-icon="carat-r">
+            <li>
+            <a href="#details">
+                <img src="./images/amy_jones.jpg">
+                <h2>vProspect</h2>
+                <p>Prospect clients</p>
+            </a>
+            <a href="#">Purchase</a>
+            </li>
+        </ul>
+    </section>    
+    </div>
+</body>
+    
+</html>
