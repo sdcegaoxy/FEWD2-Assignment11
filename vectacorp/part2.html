@@ -30,6 +30,7 @@
                 <img src="./images/amy_jones.jpg">
                 <h2>vProspect</h2>
                 <p>Prospect clients</p>
+				<span class="ui-li-count">25</span>
             </a>
             </li>
         </ul>
@@ -55,9 +56,9 @@
         <div class="clear"></div>    
             
         <ul id="details-id-list" data-role="listview" data-split-icon="carat-r" data-inset="true">
-            <li><a href="#details"><h2>Veiw Manager</h2><p>{{vm}}</p></a></li>
+            <li><a href="#details" id="godetails" uid=""><h2>Veiw Manager</h2><p>{{vm}}</p></a></li>
             <li>
-            <a href="#reporters">
+            <a href="#reporters" id="goreporters">
                 <h2>Veiw Direct Reports</h2>
                 <p>{{vrp}}</p>
             </a>
@@ -78,17 +79,17 @@
             
         
     </header>
-    <section data-role="content" id="details-id">
-        <ul id="details-info">
-            <li><img src="./images/amy_jones.jpg"></li>
-            <li>Jame Koko</li>
-            <li>CEO</li>
-        </ul>
-        <div class="clear"></div>    
-            
-         <ul data-role="listview" data-split-icon="carat-r">
+			
+    <section data-role="content" id="reportlist">
+          
+ 
+<ul data-role="listview" >
             <li>
-            
+            <a href="#details" >
+                <img src="./images/amy_jones.jpg">
+                <h2>vProspect</h2>
+                <p>Prospect clients</p>
+            </a>
             </li>
         </ul>
     </section>    
