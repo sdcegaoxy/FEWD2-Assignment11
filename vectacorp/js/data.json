@@ -9,7 +9,7 @@
     "imagepath": "./images/amy_jones.jpg",
     "officenumber": "+1 (920) 541-3369",
     "cellnumber": "+1 (942) 517-3293",
-    "reportsto": ""
+    "reportsto": "565e523106ccb1f7fa9831e5"
   },
   {
     "id": "565e52310b19b73ef80e0dc7",
@@ -17,11 +17,11 @@
       "first": "Eugene",
       "last": "Lee"
     },
-    "title": "Staff",
+    "title": "Sales Representative",
     "imagepath": "./images/eugene_lee.jpg",
     "officenumber": "+1 (884) 476-3920",
     "cellnumber": "+1 (888) 461-3071",
-    "reportsto": ""
+    "reportsto": "565e523106ccb1f7fa9831e5"
   },
   {
     "id": "565e52314087a6dd6fc7a04b",
