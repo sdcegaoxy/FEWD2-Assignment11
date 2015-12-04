@@ -1,6 +1,6 @@
 var ObjMap=new Map();
 var Data="";
-var Reportlist=[];
+//var Reportlist=[];
 
 $(document).bind('pageinit',function(){ 
    $.getJSON( "js/data.json", function( data ) {
@@ -13,7 +13,7 @@ $(document).bind('pageinit',function(){
         html+="<li><a href=\"#details\" uid=\""+obj.id+"\">"
                 +"<img src=\""+obj.imagepath+"\">"
                 +"<h2>"+obj.name.first+"&nbsp;&nbsp;"+obj.name.last+"</h2>"
-                +"<p>"+obj.title+"</p><span class=\"ui-li-count\">25</span></a></li>" ;
+                +"<p>"+obj.title+"</p><span class=\"ui-li-count\" style=\"border-radius:20px\">"+getReporterNumb(obj.id)+"</span></a></li>" ;
      }
      $("#homelist ul").html(html); 
      $('#homelist ul').listview().listview('refresh');
@@ -31,6 +31,7 @@ $(document).bind('pageinit',function(){
 		event.stopImmediatePropagation();
         //event.preventDefault();
         var user_id=$(this).attr("uid");
+        console.log("list reporter for"+user_id);
 		fillEmployeeDetails(user_id);
 		$('#details-id-list').listview().listview('refresh');
 		return false;
@@ -38,24 +39,24 @@ $(document).bind('pageinit',function(){
 	
 	$("#goreporters").on("click",function(event){
 		event.stopImmediatePropagation();
-		console.log(Reportlist);
+        var user_id=$(this).attr("uid");
+        console.log(user_id);
+        var reporterlist=getReporterList(user_id);
+        console.log(reporterlist);
 		var html="";
-		for(var i=0;i<Reportlist.length;i++){
-       	var obj=Reportlist[i]; 
+		for(var i=0;i<reporterlist.length;i++){
+       	var obj=reporterlist[i]; 
         html+="<li><a href=\"#details\" uid=\""+obj.id+"\">"
                 +"<img src=\""+obj.imagepath+"\">"
                 +"<h2>"
 				+obj.name.first+"&nbsp;&nbsp;"
 				+obj.name.last+"</h2>"
-                +"<p>"+obj.title+"</p></a></li>" ;
+                +"<p>"+obj.title+"</p><span class=\"ui-li-count\" style=\"border-radius:20px\">"+getReporterNumb(obj.id)+"</span></a></li>" ;
      }
 	 $("#reportlist ul").html(html); 
      $('#reportlist ul').listview().listview('refresh'); 
 	});
-	
-	
-	
-    
+
 });
 
 function fillEmployeeDetails(id){
@@ -77,6 +78,7 @@ function fillEmployeeDetails(id){
 		$("#details-id-list li:nth-child(3) p").text(obj.officenumber);
 		$("#details-id-list li:nth-child(4) p").text(obj.cellnumber);
 		$("#details-id-list li:nth-child(1) a").attr("uid",obj.reportsto);
+        $("#details-id-list li:nth-child(2) a").attr("uid",obj.id);
 }
 
 function getUserName(id){
@@ -90,17 +92,28 @@ function getUserName(id){
 
 function getReporterNumb(id){
 	var counts=0;
-	Reportlist=[];
+	//Reportlist=[];
 	for(var i=0;i<Data.length;i++){
 		var obj=Data[i];
 		if(id==obj.reportsto){
 			counts++;
-			Reportlist.push(obj);
+			//Reportlist.push(obj);
 		}
 	}
-	
 	return counts;
 }
+
+function getReporterList(id){
+	var reportlist=[];
+	for(var i=0;i<Data.length;i++){
+		var obj=Data[i];
+		if(id==obj.reportsto){
+			reportlist.push(obj);
+		}
+	}
+	return reportlist;
+}
+
 
 function printMap(){
 	console.log(ObjMap);
