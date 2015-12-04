@@ -48,22 +48,22 @@
     </header>
     <section data-role="content" id="details-id">
         <ul id="details-info">
-            <li><img src="./images/amy_jones.jpg"></li>
-            <li>Jame Koko</li>
-            <li>CEO</li>
+            <li><img src="" /></li>
+            <li>{{name}}</li>
+            <li>{{title}}</li>
         </ul>
         <div class="clear"></div>    
             
         <ul id="details-id-list" data-role="listview" data-split-icon="carat-r" data-inset="true">
-            <li><a href="#details"><h2>Veiw Manager</h2><p>Prospect clients</p></a></li>
+            <li><a href="#details"><h2>Veiw Manager</h2><p>{{vm}}</p></a></li>
             <li>
             <a href="#reporters">
                 <h2>Veiw Direct Reports</h2>
-                <p>2</p>
+                <p>{{vrp}}</p>
             </a>
             </li>
-            <li><a href="#"><h2>Call Office</h2><p>2</p></a></li>
-            <li><a href="#"><h2>Call Cell</h2><p>2</p></a></li>
+            <li><a href="#"><h2>Call Office</h2><p>{{officenumber}}</p></a></li>
+            <li><a href="#"><h2>Call Cell</h2><p>{{cellnumber}}</p></a></li>
         </ul>
     </section>    
     </div>
@@ -88,12 +88,7 @@
             
          <ul data-role="listview" data-split-icon="carat-r">
             <li>
-            <a href="#details">
-                <img src="./images/amy_jones.jpg">
-                <h2>vProspect</h2>
-                <p>Prospect clients</p>
-            </a>
-            <a href="#">Purchase</a>
+            
             </li>
         </ul>
     </section>    
